@@ -1,0 +1,43 @@
+<ion-header>
+
+        <ion-navbar>
+          <ion-title>New Product</ion-title>
+        </ion-navbar>
+      
+      </ion-header>
+      
+      
+      <ion-content padding>
+      
+          <ion-list>
+                  
+              <ion-item>
+                  <ion-label floating>Name</ion-label>
+                  <ion-input [(ngModel)]="prod.name" type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                    <ion-label floating>UPC</ion-label>
+                    <ion-input [(ngModel)]="prod.UPC" type="text"></ion-input>
+                </ion-item>
+              <ion-item>
+                    <ion-label floating>SKU</ion-label>
+                    <ion-input [(ngModel)]="prod.SKU" type="number"></ion-input>
+                </ion-item>
+                <ion-item>
+                        <ion-label floating>Sold Seperately</ion-label>
+                        <ion-checkbox [(ngModel)]="prod.sold_sep" ></ion-checkbox>
+                    </ion-item>
+              <ion-item>
+                  <ion-label floating>Price</ion-label>
+                  <ion-input [(ngModel)]="prod.price" type="numbewr"></ion-input>
+              </ion-item>
+              <ion-item>
+                    <ion-label floating>Cost</ion-label>
+                    <ion-input [(ngModel)]="prod.cost" type="numbewr"></ion-input>
+                </ion-item>
+      
+          </ion-list>
+      
+          <button ion-button (click)="addProduct(prod)">Add</button>
+      
+      </ion-content>

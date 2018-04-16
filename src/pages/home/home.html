@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>StridERP Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>This is the Main Dashboard for the StridERP System, from here you can navigate to the
+    different modules that make up the system.
+  </p>
+  <div *ngFor="let p of pageList">
+    <button ion-button (click)="gotoPage(p.value)" block>{{p.title}}</button>
+  </div>
+  <br>
+  <button ion-button (click)="logout()">Log Out</button>
+</ion-content>
