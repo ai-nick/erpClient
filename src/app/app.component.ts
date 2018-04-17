@@ -6,6 +6,7 @@ import { ProdList } from '../pages/products/products';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { OrderList } from '../pages/orders/orders';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,6 +27,7 @@ export class MyApp {
       { title: 'Product List', component: ProdList },
       { title: 'User List', component: ListPage },
       { title: 'Login', component: LoginPage},
+      { title: 'Orders', component: OrderList},
     ];
 
   }

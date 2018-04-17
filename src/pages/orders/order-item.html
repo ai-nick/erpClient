@@ -1,0 +1,34 @@
+<ion-header>
+
+        <ion-navbar>
+          <ion-title>Order Item</ion-title>
+        </ion-navbar>
+      
+      </ion-header>
+      
+      
+      <ion-content padding>
+      
+          <ion-list>
+                  
+              <ion-item>
+                  <ion-label floating>Amount</ion-label>
+                  <ion-select [(ngModel)]="order.type">
+                      <ion-option value="o">Out</ion-option>
+                      <ion-option value="i">In</ion-option>
+                  </ion-select>
+              </ion-item>
+              <ion-item>
+                    <ion-label floating>Amount</ion-label>
+                    <ion-input [(ngModel)]="order.quantity" type="number"></ion-input>
+                </ion-item>
+              <ion-item>
+                    <ion-label floating>Product</ion-label>
+                    <ion-input [(ngModel)]="order.product" type="number"></ion-input>
+                </ion-item>
+      
+          </ion-list>
+      
+          <button ion-button (click)="updateItem()">Create/Update</button>
+      
+      </ion-content>

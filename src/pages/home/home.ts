@@ -5,12 +5,12 @@ import { AuthProvider } from '../../providers/auth/auth';
 import {LoginPage} from '../login/login';
 import { ProdList } from '../products/products';
 import { ListPage } from '../list/list';
+import {OrderList} from '../orders/orders'
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  private products: string;
   private t: string;
   private pageList: any[];
   constructor(public navCtrl: NavController, public storage: Storage, public auth: AuthProvider) {
@@ -19,7 +19,7 @@ export class HomePage {
                     {title: 'Users',
                      value: ListPage},
                     {title: 'Orders',
-                     value: 'OrdersHome'}];
+                     value: OrderList}];
   }
 
 	ionViewDidLoad() {
@@ -51,21 +51,10 @@ export class HomePage {
 
 	}
 
-  gotoPage(pg: string){
+  gotoPage(pg){
     this.navCtrl.setRoot(pg);
   }
   
-  get_products_full(){
-    this.auth.authGetRequest('products', this.t).subscribe(
-      (data) => {
-        console.log(data);
-        this.products = data.json();
-      },
-      (err) => {
-        console.log(err);
-      }
-      );
-  }
 
   logout(){
     this.storage.set('token', undefined);

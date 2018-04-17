@@ -3,7 +3,7 @@
           <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
           </button>
-          <ion-title>Product List</ion-title>
+          <ion-title>Order List</ion-title>
         </ion-navbar>
       </ion-header>
       
@@ -12,12 +12,11 @@
         <ion-list>
           <div  ion-item *ngFor="let item of items">
           <button item-start ion-button color="primary" (click)="itemTapped(item.id)">Edit Item</button>
-            <p>{{item.name}}</p>
+            <p>{{item.id}}</p>
             <div class="item-note" item-end>
-              Price: {{item.price}}
+              Order Amount: {{item.quantity}}
             </div>
             <button item-end ion-button color="danger" (click)="deleteItem(item.id)">Delete</button>
           </div>
         </ion-list>
       </ion-content>
-      

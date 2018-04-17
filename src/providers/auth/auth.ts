@@ -48,6 +48,20 @@ export class AuthProvider {
 		headers.append('Authorization', 'Bearer '+token);
 		headers.append('Content-Type', 'application/json');
 
-		return this.http.post(this.url + 'api/' + endpoint, JSON.stringify(data), {headers:headers})
+		return this.http.post(this.url + 'api/' + endpoint+'/', JSON.stringify(data), {headers:headers})
+	}
+	authPutRequest(endpoint, token, data){
+		let headers = new Headers();
+		headers.append('Authorization', 'Bearer '+token);
+		headers.append('Content-Type', 'application/json');
+
+		return this.http.put(this.url + 'api/' + endpoint+'/', JSON.stringify(data), {headers:headers})
+	}
+	authDeleteRequest(endpoint, token){
+		let headers = new Headers();
+		headers.append('Authorization', 'Bearer '+token);
+		headers.append('Content-Type', 'application/json');
+
+		return this.http.delete(this.url + 'api/' + endpoint+'/', {headers:headers})
 	}
 }

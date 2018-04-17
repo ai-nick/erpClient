@@ -6,7 +6,8 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ProdList, NewProd } from '../pages/products/products';
+import { ProdList, NewProd, EditProd } from '../pages/products/products';
+import { OrderList } from '../pages/orders/orders';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
@@ -17,9 +18,11 @@ import { AuthProvider } from '../providers/auth/auth';
     MyApp,
     HomePage,
     ProdList,
+    OrderList,
+    EditProd,
     NewProd,
     ListPage,
-    LoginPage
+    LoginPage,
   ],
   imports: [
     IonicStorageModule.forRoot(),
@@ -32,9 +35,11 @@ import { AuthProvider } from '../providers/auth/auth';
     MyApp,
     HomePage,
     ListPage,
+    OrderList,
     ProdList,
+    EditProd,
     NewProd,
-    LoginPage
+    LoginPage,
   ],
   providers: [
     StatusBar,
